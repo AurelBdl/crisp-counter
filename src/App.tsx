@@ -3,7 +3,7 @@ import { AddPersonForm } from './components/AddPersonForm';
 import { PersonList } from './components/PersonList';
 import { Chart } from './components/Chart';
 import { Person } from './types';
-import { BarChart, Moon, Sun } from 'lucide-react';
+import { Heart, Moon, Sun } from 'lucide-react';
 import { supabase } from './lib/supabase';
 import SHA256 from 'crypto-js/sha256';
 
@@ -133,14 +133,15 @@ function App() {
   }
 
   return (
+    <>
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900 p-4 sm:p-6 lg:p-8">
-      <div className="mx-auto">
+      <div className="max-w-7xl mx-auto">
         <div className="mb-8">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
               {/* <BarChart className="w-8 h-8 text-blue-600 dark:text-blue-400" /> */}
               <h1 className="text-3xl font-bold text-gray-900 dark:text-white">Qui prend le </h1>
-              <img src="/crispLogo.png" alt="crisp" className="w-28 mt-2 cursor-pointer" onClick={() => window.open('https://app.crisp.chat/', '_blank')} />
+              <img src="/crispLogo.png" alt="crisp" className="w-28 mt-2 cursor-pointer hover:scale-110 transition-all duration-300" onClick={() => window.open('https://app.crisp.chat/', '_blank')} />
               <h1 className="text-3xl font-bold text-gray-900 dark:text-white">?</h1>
             </div>
             <button
@@ -176,7 +177,15 @@ function App() {
           />
         </div>
       </div>
+      
     </div>
+    {/* <footer className="text-center mb-3 w-full text-gray-500 text-sm">
+    Made with <Heart className="inline-block w-4 h-4 text-red-500" /> by{' '}
+    <a href="https://ablondel.com" target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:text-indigo-800">
+      Aurel
+    </a>
+  </footer> */}
+  </>
   );
 }
 
