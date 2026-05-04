@@ -173,7 +173,12 @@ function App() {
           </div>
           <div className="space-y-8">
             {people.length > 0 ? (
-              <Chart people={people} />
+              <Chart
+                people={people}
+                localUuid={localUuid}
+                onIncrement={handleIncrement}
+                onDecrement={handleDecrement}
+              />
             ) : (
               <div className="text-center py-12 bg-white dark:bg-gray-800 rounded-lg shadow-md">
                 <p className="text-gray-500 dark:text-gray-400">Ajouter des personnes pour voir le graphique</p>
